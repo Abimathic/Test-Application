@@ -20,10 +20,10 @@
     = f.label :Image
     %br/
     = f.file_field :image
+  %br/
   - if current_user.is_admin
     .field
       = f.label :yes,"Approved"
-    %br
     .field
       = f.label :yes, "Yes"
       = f.radio_button :is_approved, true
@@ -31,5 +31,5 @@
       = f.radio_button :is_approved, false
   %br
   .actions
-    = f.submit "Create Article"
+    = f.submit @article.id ? "Update Article" : "Create Article"
     = link_to "Back", articles_path
