@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title SampleExercise
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    - unless user_signed_in?
+      = link_to "sign in",  new_user_session_path
+      = link_to "sign up",  new_user_registration_path
+    - else
+      = link_to "sign out", destroy_user_session_path, method: :delete
+
+    = yield
+
