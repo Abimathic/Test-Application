@@ -10,7 +10,6 @@ gem 'haml'
 
 gem 'carrierwave'
 
-gem 'toastr-rails'
 
 gem 'mini_magick'
 # Use SCSS for stylesheets
