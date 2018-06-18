@@ -4,7 +4,6 @@
     %tr
       %th BookName
       %th Description
-      %th Testinyihiaohkgn
       %th Image
       %th{:colspan => "4"}
   %tbody
@@ -13,7 +12,6 @@
         %tr
           %td= article.title
           %td= article.content
-          %td= "111"
           %td= image_tag(article.image, height: '32', width: '32')
 
     - else
@@ -22,7 +20,6 @@
           %tr
             %td= article.title
             %td= article.content
-            %td= "2222"
             %td= image_tag(article.image, height: '32', width: '32')
             %td= link_to 'Edit', edit_article_path(article)
       - else
@@ -30,7 +27,6 @@
           %tr
             %td= article.title
             %td= article.content
-            %td= "33333333"
             %td= image_tag(article.image, height: '32', width: '32')
             %td= link_to 'Edit', edit_article_path(article)
 
@@ -38,3 +34,5 @@
 - if current_user
   - unless current_user.is_admin
     = link_to "create article", new_article_path
+     = link_to "Articles", articles_path
+
